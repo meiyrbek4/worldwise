@@ -5,7 +5,7 @@
 <img src="https://img.shields.io/badge/react-v18.3.1-blue?logo=react"/>
 <img src="https://img.shields.io/badge/reactrouterdom-v6.26.2-red?logo=reactrouter"/>
 <img src="https://img.shields.io/badge/leaflet-v1.9.4-green?logo=leaflet"/>
-<!-- <img src="https://img.shields.io/badge/DatePicker-v7.4.0-yellow"/> -->
+<img src="https://img.shields.io/badge/DatePicker-v7.4.0-yellow"/>
 </div>
 
 <p align="center">The World Wise is a web app, that helps you to not lose track of countries that u visited thru out of your journey across the world.</p>
