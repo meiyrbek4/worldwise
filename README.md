@@ -35,7 +35,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com/) and [
 $ git clone https://github.com/meiyrbek/worldwise.git
 
 # Go into the repository
-$ cd WorldWise
+$ cd worldwise-main
 
 # Install dependencies
 $ npm install
