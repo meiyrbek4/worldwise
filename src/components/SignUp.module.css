@@ -1,0 +1,41 @@
+.formRight {
+  background-color: var(--color-dark--2);
+  border-radius: 7px;
+  padding: 2rem 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  /* Different from other form */
+  width: 48rem;
+  margin: 8rem auto;
+}
+
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.formMessage {
+  color: #ff4545;
+  font-size: 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.formRight h2 {
+  font-size: 32px;
+}
