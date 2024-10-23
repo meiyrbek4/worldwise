@@ -3,7 +3,7 @@ import { auth } from "../config/Firebase";
 import { signOut } from "firebase/auth";
 import styles from "./User.module.css";
 
-function User() {
+function User({ isSidebar }) {
   const navigate = useNavigate();
   const defaultAvatar =
     "https://firebasestorage.googleapis.com/v0/b/chat-app-e2ad2.appspot.com/o/images%2Favatar_icon.png?alt=media&token=2ae0cf20-afff-4f7f-9c3c-2b6d97f35fc8";
@@ -19,7 +19,7 @@ function User() {
   }
 
   return (
-    <div className={styles.user}>
+    <div className={`${styles.user} ${isSidebar && styles.mobile}`}>
       <img src={photo} alt="User Avatar" />
 
       <span>Welcome, {auth?.currentUser?.email.replace(/@.*/, "")}</span>

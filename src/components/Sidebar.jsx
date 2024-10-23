@@ -2,17 +2,18 @@ import Logo from "./Logo";
 import AppNav from "./AppNav";
 import styles from "./Sidebar.module.css";
 import { Outlet } from "react-router-dom";
-function Sidebar() {
+import Button from "./Button";
+function Sidebar({ isSidebar, setIsSidebar }) {
   return (
-    <div className={styles.sidebar}>
+    <div className={`${styles.sidebar} ${!isSidebar ? styles.mobile : ""}`}>
       <Logo />
       <AppNav />
 
       <Outlet />
       <footer className={styles.footer}>
-        <p className={styles.copyright}>
-          &copy; Copyright {new Date().getFullYear()} by WorldWise Inc.
-        </p>
+        <Button type="mobileBack" onClick={() => setIsSidebar(false)}>
+          Close tab
+        </Button>
       </footer>
     </div>
   );

@@ -2,18 +2,23 @@ import { useState } from "react";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import styles from "./Login.module.css";
-import Spinner from "../components/Spinner";
+import SpinnerFullPage from "../components/SpinnerFullPage";
 
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
+
   return (
     <main className={styles.login}>
       {isLoading ? (
-        <Spinner />
+        <SpinnerFullPage />
       ) : (
         <>
-          <SignIn setIsLoading={setIsLoading} />
-          <SignUp setIsLoading={setIsLoading} />
+          {!isSignUp ? (
+            <SignIn setIsLoading={setIsLoading} setIsSignUp={setIsSignUp} />
+          ) : (
+            <SignUp setIsLoading={setIsLoading} setIsSignUp={setIsSignUp} />
+          )}
         </>
       )}
     </main>

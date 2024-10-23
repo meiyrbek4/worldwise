@@ -8,7 +8,8 @@
   gap: 2rem;
 
   /* Different from other form */
-  width: 48rem;
+  /* width: 48rem; */
+  width: 80%;
   margin: 8rem auto;
 }
 
@@ -38,4 +39,27 @@
 
 .formRight h2 {
   font-size: 32px;
+}
+
+@media (max-width:640px) {
+  .formRight {
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    /* Different from other form */
+    /* width: 48rem; */
+    width: 80%;
+    margin: 8rem auto;
+  }
+  
+  .btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
 }

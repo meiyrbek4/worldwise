@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function SignUp({ setIsLoading }) {
+function SignUp({ setIsLoading, setIsSignUp }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -108,6 +108,10 @@ function SignUp({ setIsLoading }) {
           Logout
         </Button>
       </div>
+
+      <Button type="primary" onClick={() => setIsSignUp((prev) => !prev)}>
+        I Have account
+      </Button>
 
       <Button type="forGoogleAuth" onClick={handleSignInWithGoogle}>
         Sign In with Google

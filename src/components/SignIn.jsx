@@ -1,21 +1,17 @@
 import styles from "./SignIn.module.css";
 import Button from "../components/Button";
 
-import { auth, db, googleProvider } from "../config/Firebase";
-import {
-  signInWithPopup,
-  signOut,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-} from "firebase/auth";
+import { auth, googleProvider } from "../config/Firebase";
+import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function SignIn({ setIsLoading }) {
+function SignIn({ setIsLoading, setIsSignUp }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+
   const navigate = useNavigate();
 
   async function handleSubmitSignIn(e) {
@@ -95,6 +91,10 @@ function SignIn({ setIsLoading }) {
       <div className={styles.btns}>
         <Button type="primary" onClick={handleSubmitSignIn}>
           Sign In
+        </Button>
+
+        <Button type="primary" onClick={() => setIsSignUp((prev) => !prev)}>
+          Create Account
         </Button>
 
         <Button type="back">Back</Button>

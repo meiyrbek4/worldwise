@@ -9,11 +9,30 @@
   height: calc(100vh - 4.8rem);
 }
 
-.footer {
-  margin-top: auto;
-}
+
 
 .copyright {
   font-size: 1.2rem;
   color: var(--color-light--1);
+}
+
+.mobile {
+  display: flex;
+}
+
+.footer {
+  height: 50px;
+  margin-top: auto;
+}
+
+@media (max-width:1024px) {
+  .sidebar {
+    flex-basis: 38rem;
+  }
+}
+
+@media (max-width:768px) {
+  .mobile {
+    display: none;
+  }
 }

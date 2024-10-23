@@ -32,3 +32,109 @@
 .product section a {
   margin-top: 2rem;
 }
+
+/* @media (max-width: 768px) {
+
+  .product {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+    width: 100dvh;
+  }
+
+  .product section {
+    display: flex;
+    padding: 20px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin: auto;
+  
+    align-items: baseline;
+    height: 100%;
+    width: 100%;
+  }
+
+  .product div {
+    width: 100dvw;
+  }
+
+  .product img {
+    width: 400px;
+  }
+
+  .product div button {
+    margin-bottom: 100px;
+  }
+} */
+
+@media (max-width: 1024px) {
+  .product {
+    padding: 2rem 3rem; /* Уменьшаем отступы */
+  }
+
+  .product section {
+    grid-template-columns: 1fr; /* Одноколоночная компоновка */
+    gap: 4rem; /* Уменьшаем промежуток между элементами */
+  }
+
+  .product h2 {
+    font-size: 3.2rem; /* Уменьшаем размер заголовка */
+  }
+
+  .product p {
+    font-size: 1.4rem; /* Уменьшаем размер текста */
+  }
+  .product img {
+    order: -1;
+  }
+}
+
+/* Стили для мобильных устройств (макс. ширина 768px) */
+@media (max-width: 768px) {
+  .product {
+    margin: 1rem;
+    padding: 1.5rem 2rem; /* Ещё больше уменьшаем отступы */
+  }
+
+  .product section {
+    margin: 3rem auto;
+    width: 100%; /* Растягиваем контент на всю ширину экрана */
+    gap: 3rem;
+  }
+
+  .product h2 {
+    font-size: 2.8rem; /* Ещё меньше заголовок */
+  }
+
+  .product p {
+    font-size: 1.2rem; /* Ещё меньше текст */
+  }
+
+  .product img {
+    order: -1;
+    width: 100%; /* Сохраняем изображение на всю ширину */
+  }
+}
+
+/* Стили для очень маленьких устройств (макс. ширина 480px) */
+@media (max-width: 480px) {
+  .product {
+    margin: 1rem;
+    padding: 1rem; /* Минимальные отступы */
+  }
+
+  .product h2 {
+    font-size: 2.4rem;
+  }
+
+  .product p {
+    font-size: 1rem;
+  }
+
+  .product img {
+    order: -1;
+   
+  }
+}

@@ -74,6 +74,11 @@ function Map() {
             </Popup>
           </Marker>
         ))}
+        <Marker position={mapPosition}>
+          <Popup>
+            <span>pew</span>
+          </Popup>
+        </Marker>
 
         <ChangePosition position={mapPosition} />
         <DetectClick />

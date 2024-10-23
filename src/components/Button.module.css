@@ -40,3 +40,47 @@
   color: var(--color-dark--1);
   box-shadow: 0 0.4rem 1.2rem rgba(36, 42, 46, 0.16);
 }
+
+.mobileBack {
+  display: none;
+  font-weight: 600;
+  background: none;
+  border: 1px solid currentColor;
+}
+
+@media (max-width:640px) {
+  .btn {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.6rem 1.2rem; /* Уменьшаем отступы */
+    font-size: 1.3rem; /* Уменьшаем размер шрифта */
+  }
+
+  .position {
+    bottom: 2rem; /* Уменьшаем расстояние до низа экрана */
+    font-size: 1.2rem; /* Уменьшаем шрифт для позиции */
+  }
+
+  .mobileBack {
+    display: block;
+
+
+  }
+}
+
+/* Адаптивные кнопки для экранов до 480px */
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.5rem 1rem; /* Ещё меньше отступы */
+    font-size: 1.2rem; /* Ещё меньше размер шрифта */
+  }
+
+  .position {
+    bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+}

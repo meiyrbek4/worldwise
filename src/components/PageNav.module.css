@@ -32,3 +32,72 @@ a.ctaLink:visited {
   padding: 0.8rem 2rem;
   border-radius: 7px;
 }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+
+
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+  }
+
+  
+
+  /* Меню отображается, если активировано */
+  .nav ul.active {
+  
+    display: flex;
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    background-color: var(--color-brand--2);
+  }
+
+  .menu-toggle {
+    display: flex;
+    z-index: 1000;
+    height: 40px;
+    width: 40px;
+  }
+
+  /* Анимация гамбургер-иконки при открытии меню */
+  .menu-toggle.open .bar:nth-child(1) {
+    
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .menu-toggle.open .bar:nth-child(2) {
+
+    opacity: 0;
+  }
+
+  .menu-toggle.open .bar:nth-child(3) {
+
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  a.ctaLink:link,
+  a.ctaLink:visited {
+    color: #fff;
+  }
+
+  
+}
