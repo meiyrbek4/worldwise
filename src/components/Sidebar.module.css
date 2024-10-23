@@ -28,11 +28,30 @@
 @media (max-width:1024px) {
   .sidebar {
     flex-basis: 38rem;
+    padding: 3rem 4rem 3.5rem 4rem;
+    height: calc(100vh - 3.9rem);
   }
 }
 
 @media (max-width:768px) {
   .mobile {
     display: none;
+  }
+
+  .sidebar {
+    flex-basis: 100%;
+    width: 100%;
+    padding: 3rem 3rem;
+    height: calc(100vh - 2.5rem);
+  }
+}
+
+@media (max-width:480px) {
+
+  .sidebar {
+    flex-basis: 100%;
+    width: 100%;
+    padding: 3rem 1rem;
+    height: calc(100vh - 2.5rem);
   }
 }

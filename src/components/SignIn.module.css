@@ -7,9 +7,7 @@
   flex-direction: column;
   gap: 2rem;
 
-  /* Different from other form */
   width: 48rem;
-  /* width: 80%; */
   margin: 8rem auto;
 }
 
@@ -48,18 +46,30 @@
   font-size: 32px;
 }
 
-@media (max-width:640px) {
+@media (max-width: 768px) {
+  .formMessage {
+    color: #ff4545;
+    font-size: 1rem;
+  }
+
+  .formLeft h2 {
+    font-size: 25px;
+  }
+}
+
+
+@media (max-width:580px) {
   .formLeft {
     border-radius: 5px;
     padding: 1rem 1.5rem;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
   
     /* Different from other form */
     /* width: 48rem; */
-    width: 80%;
+  
     margin: 8rem auto;
   }
   

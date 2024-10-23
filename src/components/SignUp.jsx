@@ -66,7 +66,6 @@ function SignUp({ setIsLoading, setIsSignUp }) {
     setMessage("");
     try {
       await signOut(auth);
-      alert("Succesfully logout");
       navigate("/");
     } catch (err) {
       console.error(err);
@@ -109,7 +108,7 @@ function SignUp({ setIsLoading, setIsSignUp }) {
         </Button>
       </div>
 
-      <Button type="primary" onClick={() => setIsSignUp((prev) => !prev)}>
+      <Button type="primary" onClick={() => setIsSignUp(false)}>
         I Have account
       </Button>
 

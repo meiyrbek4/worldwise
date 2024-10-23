@@ -36,6 +36,11 @@
 
 
 @media (max-width: 768px) {
+  .homepage {
+    height: calc(100vh - 3rem);
+    margin: 1.8rem;
+  }
+
   .homepage h1 {
     font-size: 3rem;
     line-height: 1.5;
@@ -50,8 +55,9 @@
 
 @media (max-width: 480px) {
   .homepage {
-    margin: 1.5rem;
-    padding: 2rem 2rem;
+    height: calc(100vh - 2rem);
+    margin: 1.2rem;
+    padding: 2rem 1.5rem;
   }
 
   .homepage h1 {

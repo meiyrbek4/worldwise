@@ -12,7 +12,7 @@ function Sidebar({ isSidebar, setIsSidebar }) {
       <Outlet />
       <footer className={styles.footer}>
         <Button type="mobileBack" onClick={() => setIsSidebar(false)}>
-          Close tab
+          Hide Sidebar
         </Button>
       </footer>
     </div>

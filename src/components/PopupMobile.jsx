@@ -21,6 +21,7 @@ function PopupMobile({ isSidebar, setIsSidebar }) {
       if (!lat && !lng) return;
       async function fetchCityData() {
         try {
+          setIsSidebar(false);
           setIsLoadingPosition(true);
           setErrorMsg("");
 
@@ -68,7 +69,7 @@ function PopupMobile({ isSidebar, setIsSidebar }) {
           </div>
           <div>
             <Button type="primary" onClick={() => setIsSidebar(true)}>
-              go to add form
+              Show Sidebar
             </Button>
           </div>
         </>

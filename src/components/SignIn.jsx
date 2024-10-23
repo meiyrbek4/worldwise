@@ -2,7 +2,11 @@ import styles from "./SignIn.module.css";
 import Button from "../components/Button";
 
 import { auth, googleProvider } from "../config/Firebase";
-import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -52,16 +56,16 @@ function SignIn({ setIsLoading, setIsSignUp }) {
     }
   }
 
-  // async function handleSignOut(e) {
-  //   e.preventDefault();
-  //   setMessage("");
-  //   try {
-  //     await signOut(auth);
-  //     alert("Succesfully logout");
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // }
+  async function handleSignOut(e) {
+    e.preventDefault();
+    setMessage("");
+    try {
+      await signOut(auth);
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   return (
     <form className={styles.formLeft}>
@@ -86,18 +90,20 @@ function SignIn({ setIsLoading, setIsSignUp }) {
         />
       </div>
 
-      <p className={styles.formMessage}>{message}</p>
+      {message && <p className={styles.formMessage}>{message}</p>}
 
       <div className={styles.btns}>
         <Button type="primary" onClick={handleSubmitSignIn}>
           Sign In
         </Button>
 
-        <Button type="primary" onClick={() => setIsSignUp((prev) => !prev)}>
+        <Button type="primary" onClick={() => setIsSignUp(true)}>
           Create Account
         </Button>
 
-        <Button type="back">Back</Button>
+        <Button type="back" onClick={handleSignOut}>
+          Back
+        </Button>
       </div>
 
       <Button type="forGoogleAuth" onClick={handleSignInWithGoogle}>
