@@ -11,7 +11,6 @@ function User({ isSidebar }) {
     auth.currentUser.photoURL === null
       ? defaultAvatar
       : auth.currentUser.photoURL;
-  console.log(auth.currentUser.photoURL);
 
   async function handleClick() {
     await signOut(auth);
