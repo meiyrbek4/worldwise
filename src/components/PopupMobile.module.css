@@ -5,14 +5,14 @@
   
     display: none;
     flex-direction: column;
-    width: 300px;
+    width: 250px;
   
     padding: 5px 10px;
 
   
     position: absolute;
     z-index: 1000;
-    bottom: 4rem;
+    bottom: 6rem;
     left: 50%;
     transform: translateX(-50%);
 

@@ -15,7 +15,15 @@ import { useGeolocation } from "../hooks/useGeolocation";
 import { useUrlPosition } from "../hooks/useUrlPosition";
 
 import styles from "./Map.module.css";
-import Button from "./Button";
+// import Button from "./Button";
+
+const formatDate = (date) =>
+  new Intl.DateTimeFormat("en", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    weekday: "long",
+  }).format(new Date(date));
 
 function Map() {
   const [mapPosition, setMapPosition] = useState([40, 0]);
@@ -27,8 +35,8 @@ function Map() {
   // const mapPosition = [lat, lng];
   const {
     position: geolocationPosition,
-    isLoading: isLoadingPosition,
-    getPosition,
+    // isLoading: isLoadingPosition,
+    // getPosition,
   } = useGeolocation();
 
   useEffect(
@@ -70,14 +78,42 @@ function Map() {
             key={city.id}
           >
             <Popup>
-              <span>{city.emoji}</span> <span>{city.cityName}</span>
+              <div className={styles.city}>
+                <div className={styles.row}>
+                  <h6>City name</h6>
+                  <h3>
+                    <span>{city.emoji}</span> {city.cityName}
+                  </h3>
+                </div>
+
+                <div className={styles.row}>
+                  <h6>You went to {city.cityName} on</h6>
+                  <p>{formatDate(city.date || null)}</p>
+                </div>
+
+                {city.notes && (
+                  <div className={styles.row}>
+                    <h6>Your notes</h6>
+                    <p>{city.notes}</p>
+                  </div>
+                )}
+
+                <div className={styles.row}>
+                  <h6>Learn more</h6>
+                  <a
+                    href={`https://en.wikipedia.org/wiki/${city.cityName}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Check out {city.cityName} on Wikipedia &rarr;
+                  </a>
+                </div>
+              </div>
             </Popup>
           </Marker>
         ))}
         <Marker position={mapPosition}>
-          <Popup>
-            <span>pew</span>
-          </Popup>
+          <Popup>Check down for location info</Popup>
         </Marker>
 
         <ChangePosition position={mapPosition} />
@@ -90,6 +126,7 @@ function Map() {
 function ChangePosition({ position }) {
   const map = useMap();
   map.setView(position);
+
   return null;
 }
 

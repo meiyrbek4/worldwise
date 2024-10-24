@@ -74,16 +74,13 @@ function reducer(state, action) {
         isLoading: false,
         error: action.payload,
       };
+
     default:
       throw new Error("Action is unknown");
   }
 }
 
 function CitiesProvider({ children }) {
-  // const [cities, setCities] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [currentCity, setCurrentCity] = useState({});
-
   const citiesCollectionRef = collection(db, "cities");
 
   const [
@@ -94,9 +91,6 @@ function CitiesProvider({ children }) {
   async function fetchCities() {
     dispatch({ type: "loading" });
     try {
-      // const resCities = await fetch("http://localhost:8000/cities");
-      // const data = await resCities.json();
-
       const data = await getDocs(citiesCollectionRef);
       const fetchedData = data.docs?.map((doc) => ({
         ...doc.data(),
@@ -129,12 +123,8 @@ function CitiesProvider({ children }) {
   const getCity = useCallback(
     async function getCity(id) {
       if (id === currentCity.id) return;
-
       dispatch({ type: "loading" });
       try {
-        // const resCities = await fetch(`http://localhost:8000/cities/${id}`);
-        // const data = await resCities.json();
-
         const cityRef = doc(db, "cities", id);
         const citySnap = await getDoc(cityRef);
 
@@ -152,19 +142,6 @@ function CitiesProvider({ children }) {
   async function createCity(newCity) {
     dispatch({ type: "loading" });
     try {
-      // const resCities = await fetch(`http://localhost:8000/cities/`, {
-      //   method: "POST",
-      //   body: JSON.stringify(newCity),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // });
-      // const data = await resCities.json();
-
-      // await setDoc(doc(db, "cities", crypto.randomUUID()), { ...newCity });
-
-      // await addDoc(collection(db, "cities"), { ...newCity });
-
       const newCityRef = doc(collection(db, "cities"));
       await setDoc(newCityRef, { ...newCity });
 
@@ -178,9 +155,6 @@ function CitiesProvider({ children }) {
   async function deleteCity(id) {
     dispatch({ type: "loadingDelete", payload: id });
     try {
-      // await fetch(`http://localhost:8000/cities/${id}`, {
-      //   method: "DELETE",
-      // });
       const cityDoc = doc(db, "cities", id);
       await deleteDoc(cityDoc);
       dispatch({ type: "cities/deleted", payload: id });
@@ -188,8 +162,6 @@ function CitiesProvider({ children }) {
       dispatch({ type: "error", payload: "City deleting failed" });
     }
   }
-
-  console.log(currentCity);
 
   return (
     <CitiesContext.Provider

@@ -24,6 +24,7 @@ function SignIn({ setIsLoading, setIsSignUp }) {
     setMessage("");
     try {
       await signInWithEmailAndPassword(auth, email, password);
+
       if (auth.currentUser) navigate("/app");
     } catch (err) {
       if (err.code === "auth/invalid-credential") {
@@ -36,6 +37,7 @@ function SignIn({ setIsLoading, setIsSignUp }) {
         );
       }
       console.error(err.code);
+      console.log(message);
     } finally {
       setIsLoading(false);
     }
