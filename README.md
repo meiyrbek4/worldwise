@@ -12,7 +12,7 @@
 
 <div align="center">
   
-<a href="#quicstart" >Quickstart</a> • <a href="#features" align="center">Features</a> <a href="#technologies-used" align="center">Technologies Used</a> • <a href="#usage-guide" align="center"> Usage Guide  </a> •  <a href="#license" align="center"> License  </a>
+<a href="#quicstart" >Quickstart</a> • <a href="#features" align="center">Features</a> • <a href="#technologies-used" align="center">Technologies Used</a> • <a href="#usage-guide" align="center"> Usage Guide  </a> •  <a href="#license" align="center"> License  </a>
 
 •<a href="https://worldwise-meiyrbek.netlify.app/" align="Center">WorldWise link</a>
 
