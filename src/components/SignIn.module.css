@@ -1,4 +1,4 @@
-.formLeft {
+.form{
   background-color: var(--color-dark--2);
   border-radius: 7px;
   padding: 2rem 3rem;
@@ -17,9 +17,9 @@
   margin: 10px 0;
 }
 
-.formMessage {
-  color: #ff4545;
-  font-size: 1.5rem;
+.errorMessage {
+  color: #ff7575;
+  font-size: 1.8rem;
 }
 
 .row {
@@ -33,33 +33,24 @@
   justify-content: space-between;
 }
 
-.signup {
-  text-align: right;
-}
 
-.signup label {
-  color: #c0c0c0;
-  margin-right: 10px;
-}
-
-.formLeft h2 {
+.form h2 {
   font-size: 32px;
 }
 
 @media (max-width: 768px) {
-  .formMessage {
-    color: #ff4545;
-    font-size: 1rem;
+  .errorMessage {
+    font-size: 2rem;
   }
 
-  .formLeft h2 {
+  .form h2 {
     font-size: 25px;
   }
 }
 
 
 @media (max-width:580px) {
-  .formLeft {
+  .form {
     border-radius: 5px;
     padding: 1rem 1.5rem;
     width: 90%;
@@ -67,10 +58,27 @@
     flex-direction: column;
     gap: 2rem;
   
-    /* Different from other form */
-    /* width: 48rem; */
+    margin: 4rem auto;
+  }
   
-    margin: 8rem auto;
+  .btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .form {
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    margin: 4rem auto;
   }
   
   .btns {

@@ -38,3 +38,12 @@
   -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
   }
 }
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .spinner {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
+  }
+}

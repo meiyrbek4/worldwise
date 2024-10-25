@@ -55,3 +55,27 @@
     height: calc(100vh - 2.5rem);
   }
 }
+
+@media (max-width: 1024px) and (orientation: landscape) {
+
+  .mobile {
+    display: none;
+  }
+
+  .sidebar {
+    flex-basis: 100%;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    padding: 3rem 1rem;
+    height: calc(100% - 0.5rem);
+  }
+
+  .sidebar div {
+    height: calc(100% - 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

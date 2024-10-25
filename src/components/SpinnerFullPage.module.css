@@ -6,3 +6,17 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 480px) {
+  .spinnerFullpage {
+    margin: 1rem;
+    height: calc(100vh - 2rem);
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .spinnerFullpage {
+    margin: 1rem;
+    height: calc(100vh - 2rem);
+  }
+}

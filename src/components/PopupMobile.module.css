@@ -42,6 +42,19 @@
     }
   }
 
+  @media (max-width: 1024px) and (orientation: landscape) {
+    .popup {
+        display: flex;
+        font-size: 1.4rem;
+        bottom: 4rem;
+        left: 81%;
+        transform: translateX(-50%);
+    }
+
+    .mobile {
+      display: none;
+  }
+  }
 
   /* .position {
     font-weight: 700;

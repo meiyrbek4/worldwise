@@ -1,5 +1,6 @@
 import styles from "./SignIn.module.css";
 import Button from "../components/Button";
+import SpinnerFullPage from "../components/SpinnerFullPage";
 
 import { auth, googleProvider } from "../config/Firebase";
 import {
@@ -11,10 +12,11 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function SignIn({ setIsLoading, setIsSignUp }) {
+function SignIn({ setIsSignUp }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -22,6 +24,7 @@ function SignIn({ setIsLoading, setIsSignUp }) {
     e.preventDefault();
     setIsLoading(true);
     setMessage("");
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
 
@@ -35,9 +38,9 @@ function SignIn({ setIsLoading, setIsSignUp }) {
         setMessage(
           "Too many requests. You can immediately restore it by resetting your password or you can try again later"
         );
+      } else {
+        setMessage("Is unknown error");
       }
-      console.error(err.code);
-      console.log(message);
     } finally {
       setIsLoading(false);
     }
@@ -69,8 +72,10 @@ function SignIn({ setIsLoading, setIsSignUp }) {
     }
   }
 
+  if (isLoading) return <SpinnerFullPage />;
+
   return (
-    <form className={styles.formLeft}>
+    <form className={styles.form}>
       <h2>Welcome back!</h2>
       <div className={styles.row}>
         <label htmlFor="email">Email address</label>
@@ -78,6 +83,7 @@ function SignIn({ setIsLoading, setIsSignUp }) {
           type="email"
           id="email"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
@@ -88,11 +94,12 @@ function SignIn({ setIsLoading, setIsSignUp }) {
           type="password"
           id="password"
           value={password}
+          required
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
-      {message && <p className={styles.formMessage}>{message}</p>}
+      {message && <p className={styles.errorMessage}>{message}</p>}
 
       <div className={styles.btns}>
         <Button type="primary" onClick={handleSubmitSignIn}>

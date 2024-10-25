@@ -1,4 +1,4 @@
-import styles from "./SignUp.module.css";
+import styles from "./SignIn.module.css";
 import Button from "../components/Button";
 
 import { auth, googleProvider } from "../config/Firebase";
@@ -10,14 +10,15 @@ import {
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SpinnerFullPage from "./SpinnerFullPage";
 
-function SignUp({ setIsLoading, setIsSignUp }) {
+function SignUp({ setIsSignUp }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
-  console.log(message);
+  const navigate = useNavigate();
 
   async function handleSubmitSignUp(e) {
     e.preventDefault();
@@ -39,7 +40,6 @@ function SignUp({ setIsLoading, setIsSignUp }) {
           "Too many requests. You can immediately restore it by resetting your password or you can try again later"
         );
       }
-      console.error(err.code);
     } finally {
       setIsLoading(false);
     }
@@ -72,8 +72,10 @@ function SignUp({ setIsLoading, setIsSignUp }) {
     }
   }
 
+  if (isLoading) return <SpinnerFullPage />;
+
   return (
-    <form className={styles.formRight}>
+    <form className={styles.form}>
       <h2>Create an Account</h2>
 
       <div className={styles.row}>
@@ -82,6 +84,7 @@ function SignUp({ setIsLoading, setIsSignUp }) {
           type="email"
           id="email"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
@@ -92,11 +95,12 @@ function SignUp({ setIsLoading, setIsSignUp }) {
           type="password"
           id="password"
           value={password}
+          required
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
-      <p className={styles.formMessage}>{message}</p>
+      <p className={styles.errorMessage}>{message}</p>
 
       <div className={styles.btns}>
         <Button type="primary" onClick={handleSubmitSignUp}>

@@ -6,8 +6,19 @@ import Button from "./Button";
 function Sidebar({ isSidebar, setIsSidebar }) {
   return (
     <div className={`${styles.sidebar} ${!isSidebar ? styles.mobile : ""}`}>
-      <Logo />
-      <AppNav />
+      <div>
+        <Logo />
+        <div>
+          <AppNav />
+          <Button
+            isLandscape={true}
+            type="mobileBack"
+            onClick={() => setIsSidebar(false)}
+          >
+            Hide Sidebar
+          </Button>
+        </div>
+      </div>
 
       <Outlet />
       <footer className={styles.footer}>

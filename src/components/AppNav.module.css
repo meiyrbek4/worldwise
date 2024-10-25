@@ -8,6 +8,7 @@
   display: flex;
   background-color: var(--color-dark--2);
   border-radius: 7px;
+  width: max-content;
 }
 
 .nav a:link,
@@ -25,4 +26,10 @@
 /* CSS Modules feature */
 .nav a:global(.active) {
   background-color: var(--color-dark--0);
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .nav ul {
+    width: max-content;
+  }
 }

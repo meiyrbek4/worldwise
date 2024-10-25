@@ -28,7 +28,6 @@ const AppLayout = lazy(() => import("./pages/AppLayout"));
 export default function App() {
   return (
     <CitiesProvider>
-      {/* <AuthProvider> */}
       <BrowserRouter>
         <Suspense fallback={<SpinnerFullPage />}>
           <Routes>
@@ -54,7 +53,6 @@ export default function App() {
           </Routes>
         </Suspense>
       </BrowserRouter>
-      {/* </AuthProvider> */}
     </CitiesProvider>
   );
 }
