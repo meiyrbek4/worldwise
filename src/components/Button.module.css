@@ -89,11 +89,11 @@
   }
 }
 
-@media (max-width: 1024px) and (orientation: landscape) {
+/* @media (max-width: 1024px) and (orientation: landscape) {
   .btn {
     margin-bottom: 10px;
-    padding: 0.5rem 1rem; /* Ещё меньше отступы */
-    font-size: 1.2rem; /* Ещё меньше размер шрифта */
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem; 
   }
 
   .position {
@@ -104,4 +104,4 @@
   .landscape {
     display: block;
   }
-}
+} */

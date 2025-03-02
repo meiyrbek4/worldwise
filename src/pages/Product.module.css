@@ -1,8 +1,7 @@
 .product {
-  margin: 2.5rem;
   padding: 2.5rem 5rem;
   background-color: var(--color-dark--1);
-  min-height: calc(100vh - 5rem);
+  min-height: 100vh;
 }
 
 .product section {
@@ -71,10 +70,8 @@
 
 @media (max-width: 1024px) {
   .product {
-    margin: 2rem;
     padding: 2rem 3rem;
     background-color: var(--color-dark--1);
-    min-height: calc(100vh - 3rem);
   }
 
   .product section {
@@ -97,10 +94,8 @@
 /* Стили для мобильных устройств (макс. ширина 768px) */
 @media (max-width: 768px) {
   .product {
-    margin: 1rem;
     padding: 2rem 3rem;
     background-color: var(--color-dark--1);
-    min-height: calc(100vh - 2rem);
   }
 
   .product section {
@@ -126,10 +121,8 @@
 /* Стили для очень маленьких устройств (макс. ширина 480px) */
 @media (max-width: 480px) {
   .product {
-    margin: 1rem;
     padding: 2rem 3rem;
     background-color: var(--color-dark--1);
-    min-height: calc(100vh - 2rem);
   }
 
   .product h2 {
@@ -148,10 +141,8 @@
 
 @media (max-width: 1024px) and (orientation: landscape) {
   .product {
-    margin: 1rem;
     padding: 2rem 3rem;
     background-color: var(--color-dark--1);
-    min-height: calc(100vh - 2rem);
   }
 
   .product section {

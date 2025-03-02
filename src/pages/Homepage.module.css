@@ -1,8 +1,8 @@
 .homepage {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 5rem);
-  margin: 2.5rem;
+  height: 100vh;
+  /* margin: 2.5rem; */
   background-image: linear-gradient(rgba(36, 42, 46, 0.8),
       rgba(36, 42, 46, 0.8)),
     url("/bg.jpg");
@@ -36,10 +36,7 @@
 
 
 @media (max-width: 768px) {
-  .homepage {
-    height: calc(100vh - 3rem);
-    margin: 1.8rem;
-  }
+  
 
   .homepage h1 {
     font-size: 3rem;
@@ -55,8 +52,6 @@
 
 @media (max-width: 480px) {
   .homepage {
-    height: calc(100vh - 2rem);
-    margin: 1rem;
     padding: 2rem 1.5rem;
   }
 
@@ -74,8 +69,7 @@
 
 @media (max-width: 1024px) and (orientation: landscape) {
   .homepage {
-    height: calc(100vh - 2rem);
-    margin: 1rem;
+  
     padding: 2rem 1.5rem;
   }
 

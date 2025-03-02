@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 4.8rem);
+  height: 100vh;
 }
 
 
@@ -29,7 +29,6 @@
   .sidebar {
     flex-basis: 38rem;
     padding: 3rem 4rem 3.5rem 4rem;
-    height: calc(100vh - 3.9rem);
   }
 }
 
@@ -42,7 +41,6 @@
     flex-basis: 100%;
     width: 100%;
     padding: 3rem 3rem;
-    height: calc(100vh - 2.5rem);
   }
 }
 
@@ -52,11 +50,10 @@
     flex-basis: 100%;
     width: 100%;
     padding: 3rem 1rem;
-    height: calc(100vh - 2.5rem);
   }
 }
 
-@media (max-width: 1024px) and (orientation: landscape) {
+/* @media (max-width: 1024px) and (orientation: landscape) {
 
   .mobile {
     display: none;
@@ -68,7 +65,6 @@
     gap: 15px;
     width: 100%;
     padding: 3rem 1rem;
-    height: calc(100% - 0.5rem);
   }
 
   .sidebar div {
@@ -78,4 +74,4 @@
     justify-content: space-between;
     align-items: center;
   }
-}
+} */

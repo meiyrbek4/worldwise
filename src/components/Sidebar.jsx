@@ -10,13 +10,13 @@ function Sidebar({ isSidebar, setIsSidebar }) {
         <Logo />
         <div>
           <AppNav />
-          <Button
+          {/* <Button
             isLandscape={true}
             type="mobileBack"
             onClick={() => setIsSidebar(false)}
           >
             Hide Sidebar
-          </Button>
+          </Button> */}
         </div>
       </div>
 

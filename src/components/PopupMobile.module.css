@@ -37,11 +37,11 @@
 
   @media (max-width: 480px) {
     .popup {
-    
         font-size: 1.4rem;
     }
   }
 
+/* 
   @media (max-width: 1024px) and (orientation: landscape) {
     .popup {
         display: flex;
@@ -54,7 +54,8 @@
     .mobile {
       display: none;
   }
-  }
+  } */
+
 
   /* .position {
     font-weight: 700;
